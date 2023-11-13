@@ -4,7 +4,7 @@ export const SendMetadataMessage = DefineFunction({
   callback_id: "send_metadata_message",
   title: "Send Metadata Message",
   description: "Send a Slack Message with Metadata",
-  source_file: "functions/SendMetadataMessage.ts",
+  source_file: "functions/send_metadata_message.ts",
   input_parameters: {
     properties: {
       channel_id: {
