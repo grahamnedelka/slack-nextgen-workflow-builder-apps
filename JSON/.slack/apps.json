@@ -1,0 +1,12 @@
+{
+  "apps": {
+    "TEXG06TJL": {
+      "app_id": "A062WAY5VFW",
+      "enterprise_id": "EEYQW0URL",
+      "IsDev": false,
+      "team_domain": "test-hcf",
+      "team_id": "TEXG06TJL"
+    }
+  },
+  "default": "test-hcf"
+}

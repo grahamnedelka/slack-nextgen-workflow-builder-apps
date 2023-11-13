@@ -1,5 +1,5 @@
 import { Manifest } from "deno-slack-sdk/mod.ts";
-import { SendMetadataMessage } from "./functions/SendMetadataMessage.ts";
+import { SendMetadataMessage } from "./functions/send_metadata_message.ts";
 import HandleMetadataWorkflow from "./workflows/handle_metadata_workflow.ts";
 
 /**
