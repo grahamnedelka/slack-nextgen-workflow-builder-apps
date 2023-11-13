@@ -2,4 +2,4 @@ This is a Custom Step for use in Slack's Next-Gen Workflow Builder that allows u
 
 To test this, one could create a simple Flask / Express server that listens for POST requests, parses data from the request body, and returns the response in JSON format. Run the server application and use a tool like Ngrok to forward the application traffic to a public URL and then enter the domain name assigned to you into the 'outgoingDomains' list in the manifest file.
 
-![HTTP Request](https://github.com/grahamnedelka/slack-nextgen-workflow-builder-apps/blob/main/http_request/assets/example_request.png?raw=true)
+![HTTP Request](https://github.com/grahamnedelka/slack-nextgen-workflow-builder-apps/blob/main/HTTP_Request/assets/example_request.png?raw=true)
