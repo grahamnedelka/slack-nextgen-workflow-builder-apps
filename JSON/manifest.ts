@@ -6,7 +6,7 @@ import { GetKeyIndexDefinition } from "./functions/GetKeyIndex.ts";
 
 export default Manifest({
   name: "JSON",
-  description: "A template for building Slack apps with Deno",
+  description: "Interact with JSON objects",
   icon: "assets/default_new_app_icon.png",
   functions: [
     GetElementDefinition,
@@ -15,28 +15,7 @@ export default Manifest({
     GetKeyIndexDefinition,
   ],
   workflows: [],
-  // ===================================================================
-  outgoingDomains: [], // Add the domain of your proxy server here
-  // ===================================================================
+  outgoingDomains: [],
   datastores: [],
-  botScopes: [
-    "commands",
-    "chat:write",
-    "chat:write.public",
-    "datastore:read",
-    "datastore:write",
-    "users:read",
-    "users:read.email",
-    "users.profile:read",
-    "channels:join",
-    "channels:manage",
-    "channels:history",
-    "groups:write",
-    "groups:history",
-    "im:write",
-    "im:history",
-    "mpim:write",
-    "triggers:write",
-    "triggers:read",
-  ],
+  botScopes: ["commands", "chat:write", "chat:write.public"],
 });

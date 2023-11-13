@@ -3,7 +3,7 @@ import { HTTPRequestFunction } from "./functions/http_request.ts";
 
 export default Manifest({
   name: "HTTP_Request",
-  description: "A blank template for building Slack apps with Deno",
+  description: "Perform an HTTP Request",
   icon: "assets/default_new_app_icon.png",
   functions: [HTTPRequestFunction],
   workflows: [],
