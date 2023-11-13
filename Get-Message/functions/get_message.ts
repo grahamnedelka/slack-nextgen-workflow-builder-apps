@@ -5,7 +5,7 @@ export const GetMessageFunction = DefineFunction({
   callback_id: "get_message_function",
   title: "Get Message",
   description: "Get a Message",
-  source_file: "functions/get_slack_message.ts",
+  source_file: "functions/get_message.ts",
   input_parameters: {
     properties: {
       channel_id: {
