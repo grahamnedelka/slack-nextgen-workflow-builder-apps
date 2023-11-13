@@ -1,3 +1,8 @@
 .DS_Store
 .history/*
 .vscode/*
+**/.slack/*
+**/.history/**
+**/.vscode/**
+**/.slack/apps.json
+**/.env
