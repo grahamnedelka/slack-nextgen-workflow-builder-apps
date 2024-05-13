@@ -8,7 +8,13 @@ export default Manifest({
   functions: [HTTPRequestFunction],
   workflows: [],
   // ===================================================================
-  outgoingDomains: [], // Add the domain of your proxy server here
+  outgoingDomains: ["lyft.workflows.okta.com"], // Add the domain of your proxy server here
   // ===================================================================
-  botScopes: ["commands", "chat:write", "chat:write.public"],
+  botScopes: [
+    "commands",
+    "chat:write",
+    "chat:write.public",
+    "users:read",
+    "im:write",
+  ],
 });

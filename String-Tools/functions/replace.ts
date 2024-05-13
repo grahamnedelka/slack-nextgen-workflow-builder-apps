@@ -33,51 +33,49 @@ export const ReplaceFunction = DefineFunction({
   },
   output_parameters: {
     properties: {
-      new_text: {
+      replaced_text: {
         type: Schema.types.string,
-        description: "New Text",
+        description: "Text After Replacement",
       },
     },
-    required: ["new_text"],
+    required: ["replaced_text"],
   },
 });
 
 export default SlackFunction(
   ReplaceFunction,
   ({ inputs }) => {
+    console.log(inputs);
     const { input_string, search_string, replace_with, is_regex } = inputs;
     if (is_regex === true) {
       try {
-        const new_text = input_string.replace(
-          `/${search_string}/g`,
-          replace_with,
-        );
         return {
           outputs: {
-            new_text: new_text,
+            replaced_text: input_string.replace(
+              RegExp(
+                `${search_string}`,
+              ),
+              replace_with,
+            ),
           },
         };
       } catch (error) {
-        console.error("======= ERROR ======");
-        console.error(error);
-        console.error("======= INPUTS ======");
-        console.error(inputs);
-        return { error: error.message };
+        console.log("======= ERROR ======");
+        console.log(error);
       }
     } else {
       try {
-        const new_text = input_string.replace(search_string, replace_with);
         return {
           outputs: {
-            new_text: new_text,
+            replaced_text: input_string.replace(
+              search_string,
+              replace_with,
+            ),
           },
         };
       } catch (error) {
-        console.error("======= ERROR ======");
-        console.error(error);
-        console.error("======= INPUTS ======");
-        console.error(inputs);
-        return { error: error.message };
+        console.log("======= ERROR ======");
+        console.log(error);
       }
     }
   },

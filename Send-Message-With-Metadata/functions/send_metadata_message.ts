@@ -48,11 +48,17 @@ export default SlackFunction(
           '"',
         );
 
+      console.log("======= METADATA ======");
+      console.log(message_metadata);
+
       const response = await client.chat.postMessage({
         channel: channel_id,
         blocks: message_blocks,
         metadata: message_metadata,
       });
+
+      console.log("======= RESPONSE ======");
+      console.log(response);
 
       return {
         outputs: {

@@ -14,13 +14,26 @@ export const SplitFunction = DefineFunction({
       },
       split_choice: {
         type: Schema.types.array,
+        minItems: 1,
+        maxItems: 1,
         description: "Split using either index or text match",
         title: "Split using",
         items: {
+          enum: ["Index", "Text Match", "Regex Match"],
           type: Schema.types.string,
-          enum: [
-            "Index",
-            "Text Match",
+          choices: [
+            {
+              title: "Index",
+              value: "Index",
+            },
+            {
+              title: "Text Match",
+              value: "Text Match",
+            },
+            {
+              title: "Regex Match",
+              value: "Regex Match",
+            },
           ],
         },
       },
@@ -70,17 +83,32 @@ export default SlackFunction(
         };
       }
     } else {
-      try {
-        first_part = input_text.split(split_text)[0];
-        second_part = input_text.split(split_text)[1];
-      } catch (error) {
-        console.error("======= ERROR ======");
-        console.error(error);
-        console.error("======= INPUTS ======");
-        console.error(inputs);
-        return {
-          error: error.message,
-        };
+      if (split_choice.at(0) === "Text Match") {
+        try {
+          first_part = input_text.split(split_text)[0];
+          second_part = input_text.split(split_text)[1];
+        } catch (error) {
+          console.error("======= ERROR ======");
+          console.error(error);
+          console.error("======= INPUTS ======");
+          console.error(inputs);
+          return {
+            error: error.message,
+          };
+        }
+      } else {
+        try {
+          first_part = input_text.split(RegExp(split_text))[0];
+          second_part = input_text.split(RegExp(split_text))[1];
+        } catch (error) {
+          console.error("======= ERROR ======");
+          console.error(error);
+          console.error("======= INPUTS ======");
+          console.error(inputs);
+          return {
+            error: error.message,
+          };
+        }
       }
     }
     return {

@@ -39,6 +39,11 @@ export const HTTPRequestFunction = DefineFunction({
         description: "Request body",
         title: "Request body",
       },
+      format_json: {
+        type: Schema.types.boolean,
+        description: "Format JSON response",
+        title: "Format JSON response",
+      }
     },
     required: ["url", "method"],
   },
@@ -80,9 +85,22 @@ export default SlackFunction(
         }),
       },
     );
-
+    
     const resp_body = await response.json();
-    const response_body = JSON.stringify(resp_body["Body"]);
+
+    let response_json = resp_body['Body'];
+    let response_body = {};
+    if (inputs.format_json) {
+      if (inputs.format_json === true) {
+        let formatted_json = JSON.stringify(response_json, null, 2);
+        response_body = formatted_json;
+      } else {
+        response_body = JSON.stringify(resp_body["Body"]);
+      }
+    } else {
+      response_body = JSON.stringify(resp_body["Body"]);
+    }
+
     const response_headers = JSON.stringify(resp_body["Headers"]);
     const response_status_code = resp_body["Status Code"];
 

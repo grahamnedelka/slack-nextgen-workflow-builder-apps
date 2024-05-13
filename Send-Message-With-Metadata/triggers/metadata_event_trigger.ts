@@ -27,6 +27,9 @@ const metadataEventTrigger: Trigger<typeof HandleMetadataWorkflow.definition> =
       ts: {
         value: TriggerContextData.Event.MessageMetadataPosted.message_ts,
       },
+      channel_id: {
+        value: TriggerContextData.Event.MessageMetadataPosted.channel_id,
+      },
     },
   };
 

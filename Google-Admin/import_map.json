@@ -1,8 +1,12 @@
 {
   "imports": {
-    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.4.1/",
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.5.0/",
     "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.1.2/",
-    "deno-slack-data-mapper/": "https://deno.land/x/deno_slack_data_mapper@2.4.0/",
-    "googlejwtsa/": "https://deno.land/x/googlejwtsa@0.1.8/"
+    "deno-slack-data-mapper/": "https://deno.land/x/deno_slack_data_mapper@2.4.1/",
+    "googlejwtsa/": "https://deno.land/x/googlejwtsa@v0.1.8/",
+    "deno-slack-hub/": "https://deno.land/x/deno_slack_hub@0.0.7/",
+    "std/": "https://deno.land/std@0.183.0/",
+    "axios_deno/": "https://deno.land/x/axios_deno@1.0.1/",
+"soxa/": "https://deno.land/x/soxa@1.4/"
   }
 }
